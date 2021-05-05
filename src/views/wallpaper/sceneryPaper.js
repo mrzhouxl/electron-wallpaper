@@ -1,0 +1,19 @@
+export const scenery =[
+    {
+        image:'https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=466023402,4255709910&fm=26&gp=0.png',
+        type:'scenery',
+        name:'test1'
+    },{
+        image:'https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=1020757406,2710278676&fm=26&gp=0.jpg',
+        type:'scenery',
+        name:'test2'
+    },{
+        image:'https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=3393595332,3048178123&fm=26&gp=0.jpg',
+        type:'scenery',
+        name:'test3'
+    },{
+        image:'https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=2074882956,2256754543&fm=26&gp=0.jpg',
+        type:'scenery',
+        name:'test4'
+    }
+]
