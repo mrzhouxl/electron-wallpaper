@@ -9,12 +9,12 @@
   </div>
 </template>
 <script>
-import { set } from 'wallpaper';
-import { scenery } from './sceneryPaper';
-import axios from 'axios';
-const fs = require('fs');
-const path = require('path');
-const TEMP_IMAGES_DIR = 'tempImgDir';
+import { set } from "wallpaper";
+import { scenery } from "./sceneryPaper";
+import axios from "axios";
+const fs = require("fs");
+const path = require("path");
+const TEMP_IMAGES_DIR = "tempImgDir";
 export default {
   data() {
     return {
@@ -25,26 +25,27 @@ export default {
     async setting(item) {
       axios
         .get(item.image, {
-          responseType: 'arraybuffer',
+          responseType: "arraybuffer",
         })
         .then(function (response) {
           const dir = path.join(
-            'src',
+            "src",
             TEMP_IMAGES_DIR,
-            path.basename(item.image),
+            path.basename(item.image)
           );
-          let buff = new Buffer(response.data, 'binary');
-          fs.writeFile(dir, buff, 'binary', async (err) => {
-            if (err) throw err;
-            // let thisDir = __dirname;
-            // console.log(thisDir);
-            let res = await set(dir);
-            console.log(res);
+          let buff = new Buffer(response.data, "binary");
+          fs.writeFile(dir, buff, "binary", async (err) => {
+            if (err) {
+              new Notification("通知", {
+                body: "壁纸设置失败",
+              });
+              throw err;
+            }
+            await set(dir);
+            new Notification("通知", {
+              body: "壁纸设置成功",
+            });
           });
-          // fs.writeFile('hello.txt', 'helloword', function (err) {
-          //   if (err) throw err;
-          //   console.log('保存成功');
-          // });
         });
     },
   },

@@ -13,7 +13,7 @@
             <i class="el-icon-menu"></i>
             <span slot="title">风景壁纸</span>
           </el-menu-item>
-          <el-menu-item index="2">
+          <el-menu-item index="2" route="comic">
             <i class="el-icon-setting"></i>
             <span slot="title">动漫壁纸</span>
           </el-menu-item>
@@ -40,12 +40,13 @@ export default {
   },
 };
 </script>
-<style scoped>
+<style>
 .content {
   display: flex;
 }
 .content .menu {
-  width: 150px;
+  min-width: 150px;
   height: 100vh;
+  border-right: solid 1px #e6e6e6;
 }
 </style>
